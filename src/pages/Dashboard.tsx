@@ -16,37 +16,39 @@ import {
   Mail
 } from 'lucide-react';
 
+import { PageTransition } from '@/components/ui/page-transition';
 import CRMSidebar from '../component/CRMSidebar';
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="flex h-screen bg-gray-50">
-      {/* Sidebar - Remove all props, let it handle navigation automatically */}
-      <CRMSidebar />
-      
-      {/* Main Dashboard Content */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="p-6">
-          {/* Header */}
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-              <p className="text-gray-600 mt-1">Welcome back, Sarah! Here's what's happening today.</p>
-            </div>
-            <div className="flex gap-3">
-              <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                <Filter className="w-4 h-4" />
-                Filter
-              </button>
-              <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                <Download className="w-4 h-4" />
-                Export
-              </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                <Plus className="w-4 h-4" />
-                New Lead
-              </button>
-            </div>
+    <PageTransition>
+      <div className="flex h-screen bg-gray-50">
+        {/* Sidebar - Remove all props, let it handle navigation automatically */}
+        <CRMSidebar />
+        
+        {/* Main Dashboard Content */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="p-6">
+            {/* Header */}
+            <div className="flex justify-between items-center mb-8 animate-fadeInUp">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+                <p className="text-gray-600 mt-1">Welcome back, Sarah! Here's what's happening today.</p>
+              </div>
+              <div className="flex gap-3">
+                <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 smooth-transition">
+                  <Filter className="w-4 h-4" />
+                  Filter
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 smooth-transition">
+                  <Download className="w-4 h-4" />
+                  Export
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 smooth-transition">
+                  <Plus className="w-4 h-4" />
+                  New Lead
+                </button>
+              </div>
           </div>
 
           {/* Key Metrics */}
@@ -294,12 +296,12 @@ const Dashboard: React.FC = () => {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
+              </div>            </div>
           </div>
         </div>
       </div>
     </div>
+    </PageTransition>
   );
 };
 

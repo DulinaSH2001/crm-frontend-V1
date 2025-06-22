@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import CRMSidebar from '../component/CRMSidebar';
+import { PageTransition } from '@/components/ui/page-transition';
 // Types
 interface Deal {
   id: string;
@@ -274,6 +275,7 @@ const DealPipeline = () => {
   }));
 
   return (
+    <PageTransition>
     <div className="flex h-screen bg-gray-50">
       <CRMSidebar />
       <div className="flex-1 flex flex-col h-full overflow-hidden">
@@ -549,6 +551,7 @@ const DealPipeline = () => {
         </div>
       </div>
     </div>
+    </PageTransition>
   );
 };
 
